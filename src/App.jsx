@@ -16,11 +16,8 @@ function App() {
 					<img className='header__logo' src={logo} alt='logo' />
 				</div>
 				<div className='header__search'>
-					<input
-						className='header__search-bar'
-						placeholder='Search'
-					></input>
-					<img src={avatar} alt='avatar' className='header__avatar' />
+					<input className='header__search-bar' placeholder='Search'></input>
+					<img src={avatar} alt='avatar' className='header__avatar'/>
 				</div>
 				<div className='header__upload-bar'>
 					<button className='header__upload-btn' type="submit">UPLOAD</button>
@@ -28,16 +25,19 @@ function App() {
 			</section>
 
 			<section className='video'>
-				<div className='video__play-icon-section'>
-					<img className='vide__play-icon' src={play} alt='play button' />
-					<img className='vide__pause-icon' src={pause} alt='pause button' />
-				</div>
-				<div className='video__time-bar'>
-					<div className='video__time-stamp'>0:00/4:01</div>
-				</div>
-				<div className='video__settings'>
-					<img className='video__fullscreen-icon' src={fullscreen} alt='full screen' />
-					<img className='video__volume-icon' src={volumeUp} alt='volume up' />
+				<div className='video__playback-controls'>
+					<div className='video__play-icon-section'>
+						<img className='video__play-icon' src={play} alt='play button' />
+						<img className='video__pause-icon' src={pause} alt='pause button' />
+					</div>
+					<div className='video__time-bar'>
+						<div className='video__scrub-bar'></div>
+						<div className='video__time-stamp'>0:00/4:01</div>
+					</div>
+					<div className='video__settings'>
+						<img className='video__fullscreen-icon' src={fullscreen} alt='full screen' />
+						<img className='video__volume-icon' src={volumeUp} alt='volume up' />
+					</div>
 				</div>
 			</section>
 
