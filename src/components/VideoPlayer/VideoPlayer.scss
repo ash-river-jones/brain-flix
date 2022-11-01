@@ -1,0 +1,92 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/reset" as *;
+
+
+.video {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    background: url(https://i.imgur.com/l2Xfgpl.jpg) $darkblack no-repeat scroll;
+    aspect-ratio: 16 / 9;
+
+    &__playback-controls {
+        margin: 0.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 0.25rem;
+    }
+
+    &__play-icon-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: .25rem;
+        background-color: $darkblack;
+        opacity: 50%;
+        padding: 0.125rem 0.5rem;
+        height: .75rem;
+    }
+
+    &__play-icon {
+        height: 90%;
+        width: 90%;
+    }
+
+    &__pause-icon {
+        display: none;
+        height: 90%;
+        width: 90%;
+    }
+
+    &__time-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: .25rem;
+        background-color: $darkblack;
+        opacity: 50%;
+        padding: 0.125rem 0.75rem;
+        height: 0.75rem;
+    }
+
+    &__scrub-bar {
+        height: 0.25rem;
+        width: 9rem;
+        background-color: $darkblack;
+    }
+
+    &__time-stamp {
+        color: $white;
+        // @include m-label-btn;
+        font-weight: 400;
+        font-size: 0.5rem;
+
+    }
+
+    &__settings {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        border-radius: .25rem;
+        background-color: $darkblack;
+        opacity: 50%;
+        padding: 0.125rem 0.25rem;
+        height: 0.75rem;
+    }
+
+    &__fullscreen-icon {
+        height: 90%;
+        width: 90%;
+    }
+
+    &__volume-icon {
+        height: 100%;
+        width: 100%;
+    }
+}

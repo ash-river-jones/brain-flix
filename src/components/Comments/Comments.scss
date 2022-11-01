@@ -1,0 +1,52 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/reset" as *;
+
+.comment{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    
+    &__icon-section{
+        border-bottom: 1px solid $mercury;
+    }
+
+    &__icon{
+        background-color: $mercury;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 2rem;
+        margin-right: 1rem;
+    }
+
+    &__heading{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__data{
+        width: 14.75rem;
+        border-bottom: 1px solid $mercury;
+    }
+
+    &__name{
+        @include m-body;
+        font-weight: 700;
+        color: $darkblack;
+    }
+
+    &__date{
+        @include m-body;
+        color: $silver;
+    }
+
+    &__body{
+        max-width: 14.75rem;
+        @include m-body;
+        color: $darkblack;
+        padding: 0.5rem 0 0.5rem 0;
+        margin-bottom: 1rem;
+        overflow-wrap: break-word;
+    }
+}

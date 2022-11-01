@@ -1,0 +1,87 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/reset" as *;
+
+
+.vid-details {
+    margin: 1.5rem 1rem 1rem 1rem;
+
+    &__title {
+        @include m-page-header;
+        font-weight: 700;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $mercury;
+    }
+
+    &__info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $mercury;
+    }
+
+    &__info-left {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        &--by {
+            margin-bottom: 1rem;
+        }
+        &--by-info {
+            @include m-body;
+            font-weight: 700;
+            color: $black;
+        }
+
+        &--date {
+            
+        }
+        &--date-info{
+            @include m-subheader;
+            font-weight: 400;
+            color: $silver;
+        }
+    }
+
+    &__info-right {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        color: $silver;
+
+        &--views {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        &--views-icon {
+            margin-inline: .125rem;
+            padding-right: .25rem;
+        }
+        &--views-info{
+            @include m-subheader;
+            font-weight: 400;
+        }
+
+        &--likes {
+            display: flex;
+        }
+
+        &--likes-icon {
+            margin-inline: .28125rem;
+            padding-right: .25rem;
+        }
+        &--likes-info {
+            @include m-subheader;
+            font-weight: 400;
+        }
+
+    }
+
+    &__description {
+        @include m-body;
+    }
+}
