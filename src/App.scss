@@ -1,0 +1,137 @@
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/typography" as *;
+
+*{
+    
+}
+
+.header{
+
+    &__logo-section{
+
+    }
+
+    &__logo{
+
+    }
+
+    &__search{
+
+    }
+
+    &__search-bar{
+        background: url(./assets/images/icons/search.svg) no-repeat scroll;
+        padding-left: 1.5rem;
+    }
+
+    &__avatar{
+        margin: 1rem;
+        height: 2rem;
+        width: 2rem;
+    }
+
+    &__upload-bar{
+
+    }
+
+    &__upload-btn{
+        background: url(./assets/images/icons/upload.svg) no-repeat scroll;
+        width: 25rem;
+    }
+}
+
+.video{
+    background-color: lightgrey;
+    &__play-icon-section{
+
+    }
+
+    &__play-icon{
+
+    }
+
+    &__pause-icon{
+
+    }
+
+    &__time-bar{
+
+    }
+    
+    &__time-stamp{
+
+    }
+
+    &__settings{
+
+    }
+
+    &__fullscreen-icon{
+
+    }
+
+    &__volume-icon{
+
+    }
+}
+
+.vid-details{
+    background-color: lightgrey;
+    &__title{
+
+    }
+
+    &__info-wrapper{
+
+    }
+
+    &__info-left{
+
+        &--by{
+
+        }
+        &--date{
+
+        }
+    }
+
+    &__info-right{
+
+        &--views{
+
+        }
+
+        &--views-icon{
+
+        }
+
+        &--likes{
+
+        }
+
+        &--likes-icon{
+
+        }
+    }
+
+    &__description{
+
+    }
+}
+
+
+
+
+
+
+.new-comment__avatar{
+    margin: 1rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.new-comment__btn{
+    background: url(./assets/images/icons/add_comment.svg) no-repeat scroll;
+    padding-left: 1.5rem;
+}
