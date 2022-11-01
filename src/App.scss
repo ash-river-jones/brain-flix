@@ -2,33 +2,31 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/typography" as *;
 
-*{
+* {
     font-family: Avenir;
     margin: 0;
 }
 
-.header{
+.header {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     margin-inline: 1rem;
 
-    &__logo-section{
-        margin: 1rem 1rem 1rem 1rem;
+    &__logo-section {
+        margin: 1rem 1rem 0.5rem 1rem;
     }
 
-    &__logo{
-        
-    }
+    &__logo {}
 
-    &__search{
+    &__search {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
     }
 
-    &__search-bar{
+    &__search-bar {
         background: url(./assets/images/icons/search.svg) $alabaster no-repeat scroll;
         background-position: 3% 50%;
         border: 1px solid $mercury;
@@ -39,7 +37,7 @@
 
     }
 
-    &__avatar{
+    &__avatar {
         background-color: $mercury;
         background-position: center;
         background-size: cover;
@@ -50,11 +48,11 @@
         margin-left: 1rem;
     }
 
-    &__upload-bar{
+    &__upload-bar {
         width: 100%;
     }
 
-    &__upload-btn{        
+    &__upload-btn {
         border-radius: 0.25rem;
         background: url(./assets/images/icons/upload.svg) $blue no-repeat scroll;
         background-position: 3% 50%;
@@ -67,14 +65,15 @@
         color: $white;
         @include m-label-btn;
         border: 0;
+
         &::placeholder {
-        text-align: center;
-        margin: 0.5rem;
+            text-align: center;
+            margin: 0.5rem;
         }
     }
 }
 
-.video{
+.video {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -82,36 +81,38 @@
     width: 100%;
     background: url(https://i.imgur.com/l2Xfgpl.jpg) $darkblack no-repeat scroll;
     aspect-ratio: 16 / 9;
-    
-    &__playback-controls{
-        margin: 1rem;
+
+    &__playback-controls {
+        margin: 0.5rem;
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 0.25rem;
     }
 
-    &__play-icon-section{
+    &__play-icon-section {
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: .25rem;
         background-color: $darkblack;
         opacity: 50%;
-        padding: 0.125rem 0.75rem;
+        padding: 0.125rem 0.5rem;
+        height: .75rem;
     }
 
-    &__play-icon{
-        height: 75%;
-        width: 75%;
+    &__play-icon {
+        height: 90%;
+        width: 90%;
     }
 
-    &__pause-icon{
+    &__pause-icon {
         display: none;
-        height: 75%;
-        width: 75%;
+        height: 90%;
+        width: 90%;
     }
 
-    &__time-bar{
+    &__time-bar {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -119,100 +120,114 @@
         background-color: $darkblack;
         opacity: 50%;
         padding: 0.125rem 0.75rem;
+        height: 0.75rem;
     }
-    
-    &__scrub-bar{
+
+    &__scrub-bar {
         height: 0.25rem;
-        width: 4rem;
+        width: 9rem;
         background-color: $darkblack;
     }
 
-    &__time-stamp{
+    &__time-stamp {
         color: $white;
+        // @include m-label-btn;
+        font-weight: 400;
+        font-size: 0.5rem;
 
     }
 
-    &__settings{
+    &__settings {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 0.75rem;
         border-radius: .25rem;
         background-color: $darkblack;
         opacity: 50%;
-        padding: 0.125rem 0.75rem;
+        padding: 0.125rem 0.25rem;
+        height: 0.75rem;
     }
 
-    &__fullscreen-icon{
-        height: 75%;
-        width: 75%;
+    &__fullscreen-icon {
+        height: 90%;
+        width: 90%;
     }
 
-    &__volume-icon{
-        height: 75%;
-        width: 75%;
+    &__volume-icon {
+        height: 100%;
+        width: 100%;
     }
 }
 
-.vid-details{
+.vid-details {
     margin: 1.5rem 1rem 1rem 1rem;
 
-    &__title{
+    &__title {
         @include m-page-header;
         font-weight: 400;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $mercury;
     }
 
-    &__info-wrapper{
+    &__info-wrapper {
         display: flex;
         justify-content: space-between;
         margin: 1rem 0;
-
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $mercury;
     }
 
-    &__info-left{
+    &__info-left {
         display: flex;
         flex-direction: column;
         width: 50%;
 
-        &--by{
+        &--by {
             margin-bottom: 1rem;
             @include m-subheader;
         }
 
-        &--date{
+        &--date {
             @include m-subheader;
             font-weight: 400;
+            color: $silver;
         }
     }
 
-    &__info-right{
+    &__info-right {
         display: flex;
         flex-direction: column;
         width: 50%;
+        color: $silver;
 
-        &--views{
+        &--views {
             display: flex;
             margin-bottom: 1rem;
             @include m-subheader;
             font-weight: 400;
         }
 
-        &--views-icon{
-            margin-right: .25rem;
+        &--views-icon {
+            margin-inline: .125rem;
+            padding-right: .25rem;
         }
 
-        &--likes{
+        &--likes {
             display: flex;
             @include m-subheader;
             font-weight: 400;
         }
 
-        &--likes-icon{
-            margin-right: .25rem;
+        &--likes-icon {
+            margin-inline: .28125rem;
+            padding-right: .25rem;
+
         }
     }
 
-    &__description{
-
+    &__description {
+        @include m-body;
     }
 }
 
@@ -221,13 +236,13 @@
 
 
 
-.new-comment__avatar{
+.new-comment__avatar {
     margin: 1rem;
     height: 2rem;
     width: 2rem;
 }
 
-.new-comment__btn{
+.new-comment__btn {
     background: url(./assets/images/icons/add_comment.svg) no-repeat scroll;
     padding-left: 1.5rem;
 }

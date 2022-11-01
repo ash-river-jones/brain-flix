@@ -1,4 +1,5 @@
 import './App.scss';
+// import {useState} from 'react';
 import logo from './assets/images/logo/logo.svg';
 import avatar from './assets/images/images/Mohan-muruge.jpg';
 import play from './assets/images/icons/play.svg';
@@ -16,27 +17,48 @@ function App() {
 					<img className='header__logo' src={logo} alt='logo' />
 				</div>
 				<div className='header__search'>
-					<input className='header__search-bar' placeholder='Search'></input>
-					<img src={avatar} alt='avatar' className='header__avatar'/>
+					<input
+						className='header__search-bar'
+						placeholder='Search'
+					></input>
+					<img src={avatar} alt='avatar' className='header__avatar' />
 				</div>
 				<div className='header__upload-bar'>
-					<button className='header__upload-btn' type="submit">UPLOAD</button>
+					<button className='header__upload-btn' type='submit'>
+						UPLOAD
+					</button>
 				</div>
 			</section>
 
 			<section className='video'>
 				<div className='video__playback-controls'>
 					<div className='video__play-icon-section'>
-						<img className='video__play-icon' src={play} alt='play button' />
-						<img className='video__pause-icon' src={pause} alt='pause button' />
+						<img
+							className='video__play-icon'
+							src={play}
+							alt='play button'
+						/>
+						<img
+							className='video__pause-icon'
+							src={pause}
+							alt='pause button'
+						/>
 					</div>
 					<div className='video__time-bar'>
 						<div className='video__scrub-bar'></div>
 						<div className='video__time-stamp'>0:00/4:01</div>
 					</div>
 					<div className='video__settings'>
-						<img className='video__fullscreen-icon' src={fullscreen} alt='full screen' />
-						<img className='video__volume-icon' src={volumeUp} alt='volume up' />
+						<img
+							className='video__fullscreen-icon'
+							src={fullscreen}
+							alt='full screen'
+						/>
+						<img
+							className='video__volume-icon'
+							src={volumeUp}
+							alt='volume up'
+						/>
 					</div>
 				</div>
 			</section>
@@ -49,30 +71,39 @@ function App() {
 							<p>By Red Crow</p>
 						</div>
 						<div className='vid-details__info-left--date'>
-							<p> a random date</p>
+							<p>07/11/2021</p>
 						</div>
 					</div>
 					<div className='vid-details__info-right'>
 						<div className='vid-details__info-right--views'>
-							<img className='vid-details__info-right--views-icon' src={views} alt='views icon' />
-							<p>number of views</p>
+							<img
+								className='vid-details__info-right--views-icon'
+								src={views}
+								alt='views icon'
+							/>
+							<p>1,001,023</p>
 						</div>
 						<div className='vid-details__info-right--likes'>
-							<img className='vid-details__info-right--likes-icon' src={likes} alt='like icon' />
-							<p>number of likes</p>
+							<img
+								className='vid-details__info-right--likes-icon'
+								src={likes}
+								alt='like icon'
+							/>
+							<p>110,985</p>
 						</div>
 					</div>
 				</div>
 				<div className='vid-details__description'>
 					<p>
-					On a gusty day in Southern Utah, a group of 25 daring
-					mountain bikers blew the doors off what is possible on two
-					wheels, unleashing some of the biggest moments the sport has
-					ever seen. While mother nature only allowed for one full run
-					before the conditions made it impossible to ride, that was
-					all that was needed for event veteran Kyle Strait, who won
-					the event for the second time -- eight years after his first
-					Red Cow Rampage title
+						On a gusty day in Southern Utah, a group of 25 daring
+						mountain bikers blew the doors off what is possible on
+						two wheels, unleashing some of the biggest moments the
+						sport has ever seen. While mother nature only allowed
+						for one full run before the conditions made it
+						impossible to ride, that was all that was needed for
+						event veteran Kyle Strait, who won the event for the
+						second time -- eight years after his first Red Cow
+						Rampage title
 					</p>
 				</div>
 			</section>
@@ -114,9 +145,13 @@ function App() {
 						</div>
 						<div className='comment__data'>
 							<div className='comment__name'>Ash Jones</div>
-							<div className='comment_name'>random date here</div>
+							<div className='comment_name'>08/09/2021</div>
 							<div className='comment__body'>
-								<p>This is my comment area - yayayyyyy</p>
+								<p>They BLEW the ROOF off at their last
+								event, once everyone started figuring
+								out they were going. This is still simply
+								the greatest opening of an event I have
+								EVER witnessed.</p>
 							</div>
 						</div>
 					</div>
