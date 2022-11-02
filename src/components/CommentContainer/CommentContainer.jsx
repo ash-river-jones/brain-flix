@@ -2,10 +2,19 @@ import './CommentContainer.scss'
 import Comments from '../Comments/Comments'
 import '../Comments/Comments.scss'
 
-function CommentContainer(){
+function CommentContainer(props){
+
+    const data = props.commentData
+    
     return(
         <div className='comment-container'>
-            <Comments />
+            
+            {data.map((comment) => (
+                <Comments key={comment.id} name={comment.name} timestamp={comment.timestamp} comment={comment.comment} />
+            ))}
+            
+            
+            
         </div>
     )
 }

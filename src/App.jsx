@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import './App.scss';
 
 import Header from './components/Header/Header';
@@ -15,13 +17,19 @@ import './components/CommentSection/CommentSection.scss';
 import NextVideoSection from './components/NextVideoSection/NextVideoSection';
 import './components/NextVideoSection/NextVideoSection.scss'
 
+import videoData from './data/video-details.json'
+
 function App() {
+	const [activeVideo, setActiveVideo] = useState(videoData[0])
+
+	// console.log(activeVideo)
+
 	return (
 		<div className='App'>
 			<Header />
-			<VideoPlayer />
-			<VideoDetails />
-			<CommentSection />
+			<VideoPlayer image={activeVideo.image} />
+			<VideoDetails activeVideo={activeVideo} />
+			<CommentSection commentData={activeVideo.comments}/>
 			<NextVideoSection />
 			
 		</div>

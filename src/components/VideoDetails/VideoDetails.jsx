@@ -1,23 +1,51 @@
-import views from '../../assets/images/icons/views.svg';
-import likes from '../../assets/images/icons/likes.svg';
+import viewsIcon from '../../assets/images/icons/views.svg';
+import likesIcon from '../../assets/images/icons/likes.svg';
 import './VideoDetails.scss'
 
-function VideoDetails() {
+function VideoDetails(props) {
+	
+	const { title, channel, timestamp, views, likes, description} = props.activeVideo
+
+	function videoRelativeTime(timestamp) {
+		const oneYear = 1000 * 60 * 60 * 24 * 365.25;
+		const oneMonth = 1000 * 60 * 60 * 24 * (365.25 / 12);
+		const oneDay = 1000 * 60 * 60 * 24;
+		const oneHour = 1000 * 60 * 60;
+		const oneMinute = 1000 * 60;
+
+		const timeSince = new Date().getTime() - timestamp;
+
+		if (timeSince <= oneMinute) {
+			return 'Just now';
+		} else if (timeSince < oneHour) {
+			return Math.round(timeSince / oneMinute) + ' minutes ago';
+		} else if (timeSince < oneDay) {
+			return Math.round(timestamp / oneHour) + ' hours ago';
+		} else if (timeSince < oneMonth) {
+			return Math.round(timeSince / oneDay) + ' days ago';
+		} else if (timeSince < oneYear) {
+			return Math.round(timestamp / oneMonth) + ' months ago';
+		} else {
+			return Math.round(timeSince / oneYear) + ' years ago';
+		}
+	}
+	
 	return (
+
 		<section className='vid-details'>
 			<div className='vid-details__title'>
-				BMX Rampage: 2021 Highlights
+				{title}
 			</div>
 			<div className='vid-details__info-wrapper'>
 				<div className='vid-details__info-left'>
 					<div className='vid-details__info-left--by'>
 						<p className='vid-details__info-left--by-info'>
-							By Red Crow
+							{channel}
 						</p>
 					</div>
 					<div className='vid-details__info-left--date'>
 						<p className='vid-details__info-left--date-info'>
-							07/11/2021
+							{videoRelativeTime(timestamp)}
 						</p>
 					</div>
 				</div>
@@ -25,35 +53,28 @@ function VideoDetails() {
 					<div className='vid-details__info-right--views'>
 						<img
 							className='vid-details__info-right--views-icon'
-							src={views}
+							src={viewsIcon}
 							alt='views icon'
 						/>
 						<p className='vid-details__info-right--views-info'>
-							1,001,023
+							{views}
 						</p>
 					</div>
 					<div className='vid-details__info-right--likes'>
 						<img
 							className='vid-details__info-right--likes-icon'
-							src={likes}
+							src={likesIcon}
 							alt='like icon'
 						/>
 						<p className='vid-details__info-right--likes-info'>
-							110,985
+							{likes}
 						</p>
 					</div>
 				</div>
 			</div>
 			<div className='vid-details__description'>
 				<p>
-					On a gusty day in Southern Utah, a group of 25 daring
-					mountain bikers blew the doors off what is possible on two
-					wheels, unleashing some of the biggest moments the sport has
-					ever seen. While mother nature only allowed for one full run
-					before the conditions made it impossible to ride, that was
-					all that was needed for event veteran Kyle Strait, who won
-					the event for the second time -- eight years after his first
-					Red Cow Rampage title
+					{description}
 				</p>
 			</div>
 		</section>

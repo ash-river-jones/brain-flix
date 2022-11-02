@@ -1,27 +1,38 @@
-
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/reset" as *;
 
 .next-video{
     &__container{
-
-    }
-
-    &__thumbnail-section{
-        
+        display: flex;
+        margin: 0.75rem 0;
     }
 
     &__thumbnail{
+        aspect-ratio:16 / 9;
+        max-width: 6rem;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        border-radius: .25rem;
+        margin-right: 0.75rem;
 
     }
 
     &__data{
-
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.25rem;
     }
 
     &__title{
-
+        @include m-body;
+        font-weight: 700;
     }
 
     &__author{
-        
+        @include m-body;
     }
 }

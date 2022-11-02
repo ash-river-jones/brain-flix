@@ -11,6 +11,7 @@
     &__heading{
         @include m-section-header;
         color: $silver;
+        margin: 1rem 0;
     }
     
     &__list{

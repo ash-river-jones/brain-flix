@@ -9,8 +9,6 @@ function NextVideoSection(){
 				<div className='next-video__list'>
 					<div className="next-video__list-wrapper">
 						<NextVideo />
-						<NextVideo />
-						<NextVideo />
 					</div>
 				</div>
 			</section>
