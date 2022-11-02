@@ -4,16 +4,15 @@
 @use "../../styles/partials/reset" as *;
 
 
-.comment-section{
+.comment-section {
 
     margin: 1.5rem 1rem 1rem 1rem;
 
-    &__heading{
+    &__heading {
         margin: 1rem 0;
     }
 
-    &__comment-counter{
+    &__comment-counter {
         @include m-section-header;
     }
 }
-

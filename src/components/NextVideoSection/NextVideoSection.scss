@@ -3,18 +3,16 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/reset" as *;
 
-.next-video{
-    &__section{
+.next-video {
+    &__section {
         margin: 1rem;
     }
 
-    &__heading{
+    &__heading {
         @include m-section-header;
         color: $silver;
         margin: 1rem 0;
     }
-    
-    &__list{
 
-    }
+    &__list {}
 }

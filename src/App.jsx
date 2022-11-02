@@ -15,21 +15,20 @@ import CommentSection from './components/CommentSection/CommentSection';
 import './components/CommentSection/CommentSection.scss';
 
 import NextVideoSection from './components/NextVideoSection/NextVideoSection';
-import './components/NextVideoSection/NextVideoSection.scss'
+import './components/NextVideoSection/NextVideoSection.scss';
 
-import videoData from './data/video-details.json'
+import videoData from './data/video-details.json';
 
 function App() {
-	const [activeVideo, setActiveVideo] = useState(videoData[5])
+	const [activeVideo, setActiveVideo] = useState(videoData[5]);
 
 	return (
 		<div className='App'>
 			<Header />
 			<VideoPlayer image={activeVideo.image} />
 			<VideoDetails activeVideo={activeVideo} />
-			<CommentSection commentData={activeVideo.comments}/>
+			<CommentSection commentData={activeVideo.comments} />
 			<NextVideoSection />
-			
 		</div>
 	);
 }

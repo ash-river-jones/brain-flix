@@ -1,10 +1,10 @@
 import viewsIcon from '../../assets/images/icons/views.svg';
 import likesIcon from '../../assets/images/icons/likes.svg';
-import './VideoDetails.scss'
+import './VideoDetails.scss';
 
 function VideoDetails(props) {
-	
-	const { title, channel, timestamp, views, likes, description} = props.activeVideo
+	const { title, channel, timestamp, views, likes, description } =
+		props.activeVideo;
 
 	function videoRelativeTime(timestamp) {
 		const oneYear = 1000 * 60 * 60 * 24 * 365.25;
@@ -29,13 +29,10 @@ function VideoDetails(props) {
 			return Math.round(timeSince / oneYear) + ' years ago';
 		}
 	}
-	
-	return (
 
+	return (
 		<section className='vid-details'>
-			<div className='vid-details__title'>
-				{title}
-			</div>
+			<div className='vid-details__title'>{title}</div>
 			<div className='vid-details__info-wrapper'>
 				<div className='vid-details__info-left'>
 					<div className='vid-details__info-left--by'>
@@ -73,12 +70,10 @@ function VideoDetails(props) {
 				</div>
 			</div>
 			<div className='vid-details__description'>
-				<p>
-					{description}
-				</p>
+				<p>{description}</p>
 			</div>
 		</section>
 	);
 }
 
-export default VideoDetails
+export default VideoDetails;

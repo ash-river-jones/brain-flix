@@ -30,16 +30,16 @@
         &--by {
             margin-bottom: 1rem;
         }
+
         &--by-info {
             @include m-body;
             font-weight: 700;
             color: $black;
         }
 
-        &--date {
-            
-        }
-        &--date-info{
+        &--date {}
+
+        &--date-info {
             @include m-subheader;
             font-weight: 400;
             color: $silver;
@@ -61,7 +61,8 @@
             margin-inline: .125rem;
             padding-right: .25rem;
         }
-        &--views-info{
+
+        &--views-info {
             @include m-subheader;
             font-weight: 400;
         }
@@ -74,6 +75,7 @@
             margin-inline: .28125rem;
             padding-right: .25rem;
         }
+
         &--likes-info {
             @include m-subheader;
             font-weight: 400;

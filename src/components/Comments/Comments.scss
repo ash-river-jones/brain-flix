@@ -3,16 +3,16 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/reset" as *;
 
-.comment{
+.comment {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
-    
-    &__icon-section{
+
+    &__icon-section {
         border-bottom: 1px solid $mercury;
     }
 
-    &__icon{
+    &__icon {
         background-color: $mercury;
         width: 2.25rem;
         height: 2.25rem;
@@ -20,28 +20,28 @@
         margin-right: 1rem;
     }
 
-    &__heading{
+    &__heading {
         display: flex;
         justify-content: space-between;
     }
 
-    &__data{
+    &__data {
         width: 14.75rem;
         border-bottom: 1px solid $mercury;
     }
 
-    &__name{
+    &__name {
         @include m-body;
         font-weight: 700;
         color: $darkblack;
     }
 
-    &__date{
+    &__date {
         @include m-body;
         color: $silver;
     }
 
-    &__body{
+    &__body {
         max-width: 14.75rem;
         @include m-body;
         color: $darkblack;
