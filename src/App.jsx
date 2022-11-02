@@ -20,9 +20,7 @@ import './components/NextVideoSection/NextVideoSection.scss'
 import videoData from './data/video-details.json'
 
 function App() {
-	const [activeVideo, setActiveVideo] = useState(videoData[0])
-
-	// console.log(activeVideo)
+	const [activeVideo, setActiveVideo] = useState(videoData[5])
 
 	return (
 		<div className='App'>
