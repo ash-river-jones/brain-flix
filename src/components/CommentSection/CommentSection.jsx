@@ -12,7 +12,7 @@ function CommentSection(props) {
 	return (
 		<section className='comment-section'>
 			<div className='comment-section__heading'>
-				<h5 className='comment-section__comment-counter'>{numberOfComments + " Comments"}</h5>
+				<h5 className='comment-section__comment-counter'>{numberOfComments} Comments</h5>
 			</div>
 			<NewCommentForm />
 
