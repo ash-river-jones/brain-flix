@@ -9,7 +9,6 @@ function NextVideoSection(props) {
 		props.handelVideoClick(id);
 	};
 
-	// const handelVideoClick = props.handelVideoClick
 	const activeVideoID = props.activeVideo.id;
 
 	return (

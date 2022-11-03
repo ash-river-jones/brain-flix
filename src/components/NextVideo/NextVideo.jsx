@@ -7,9 +7,6 @@ function NextVideo(props) {
 		handelVideoClick(id);
 	};
 
-	// const nextVideoData = props.data
-	// console.log(nextVideoData)
-
 	return (
 		<div onClick={() => videoClick(id)} className='next-video__container'>
 			<img

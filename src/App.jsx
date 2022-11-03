@@ -1,22 +1,14 @@
 import { useState } from 'react';
-
 import './App.scss';
 
+//Component Imports
 import Header from './components/Header/Header';
-import './components/Header/Header.scss';
-
 import VideoPlayer from './components/VideoPlayer/VideoPlayer';
-import './components/VideoPlayer/VideoPlayer.scss';
-
 import VideoDetails from './components/VideoDetails/VideoDetails';
-import './components/VideoDetails/VideoDetails.scss';
-
 import CommentSection from './components/CommentSection/CommentSection';
-import './components/CommentSection/CommentSection.scss';
-
 import NextVideoSection from './components/NextVideoSection/NextVideoSection';
-import './components/NextVideoSection/NextVideoSection.scss';
 
+//JSON files
 import videoData from './data/video-details.json';
 import nextVideoData from './data/videos.json';
 
