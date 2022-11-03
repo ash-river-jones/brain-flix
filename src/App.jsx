@@ -10,18 +10,15 @@ import NextVideoSection from './components/NextVideoSection/NextVideoSection';
 
 //JSON files
 import videoData from './data/video-details.json';
-import nextVideoData from './data/videos.json';
 
 function App() {
 	const [activeVideo, setActiveVideo] = useState(videoData[0]);
 
 	const handelVideoClick = (id) => {
-		const foundVideo = nextVideoData.find(
+		const foundVideo = videoData.find(
 			(videoObject) => videoObject.id === id
 		);
 		setActiveVideo(foundVideo);
-		console.log(id);
-		console.log(foundVideo);
 	};
 
 	return (

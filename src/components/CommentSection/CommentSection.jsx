@@ -7,7 +7,7 @@ import '../Comments/Comments.scss';
 
 function CommentSection(props) {
 	const commentList = props.commentData;
-	console.log(commentList);
+	// console.log(commentList);
 	return (
 		<section className='comment-section'>
 			<div className='comment-section__heading'>
