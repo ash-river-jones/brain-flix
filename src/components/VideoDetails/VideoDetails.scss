@@ -7,11 +7,26 @@
 .vid-details {
     margin: 1.5rem 1rem 1rem 1rem;
 
+    @include tablet {
+        margin-inline: 1.5rem
+    }
+
+    &__wrapper {
+        margin-inline: auto;
+
+    }
+
     &__title {
         @include m-page-header;
         font-weight: 700;
         padding-bottom: 1rem;
         border-bottom: 1px solid $mercury;
+
+        @include tablet {
+            @include dt-page-header;
+            border: none;
+            padding: none;
+        }
     }
 
     &__info-wrapper {
@@ -20,6 +35,11 @@
         margin: 1rem 0;
         padding-bottom: 1rem;
         border-bottom: 1px solid $mercury;
+
+        @include tablet {
+            margin: 0;
+            padding: 0;
+        }
     }
 
     &__info-left {
@@ -27,22 +47,39 @@
         flex-direction: column;
         width: 50%;
 
+        @include tablet {
+            flex-direction: row;
+        }
+
         &--by {
             margin-bottom: 1rem;
+
+            @include tablet {
+                margin-right: 1.5rem;
+                margin-bottom: 0
+            }
         }
 
         &--by-info {
             @include m-body;
             font-weight: 700;
             color: $black;
+
+            @include tablet {
+                @include dt-body;
+                font-weight: 700;
+            }
         }
 
         &--date {}
 
         &--date-info {
-            @include m-subheader;
-            font-weight: 400;
+            @include m-body;
             color: $silver;
+
+            @include tablet {
+                @include dt-body;
+            }
         }
     }
 
@@ -51,6 +88,11 @@
         flex-direction: column;
         width: 50%;
         color: $silver;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
 
         &--views {
             display: flex;
@@ -63,27 +105,51 @@
         }
 
         &--views-info {
-            @include m-subheader;
-            font-weight: 400;
+            @include m-body;
+
+            @include tablet {
+                @include dt-body;
+            }
         }
 
         &--likes {
             display: flex;
+
+            @include tablet {
+                margin-left: 1.5rem;
+            }
         }
 
         &--likes-icon {
             margin-inline: .28125rem;
             padding-right: .25rem;
+
+            @include tablet {
+                height: 1.375rem
+            }
         }
 
         &--likes-info {
-            @include m-subheader;
-            font-weight: 400;
+            @include m-body;
+
+            @include tablet {
+                @include dt-body;
+            }
         }
 
     }
 
+    &__description-section {
+        @include tablet {
+            padding-top: 1.5rem;
+        }
+    }
+
     &__description {
         @include m-body;
+
+        @include tablet {
+            @include dt-body;
+        }
     }
 }
