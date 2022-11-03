@@ -7,11 +7,12 @@ import '../Comments/Comments.scss';
 
 function CommentSection(props) {
 	const commentList = props.commentData;
-	// console.log(commentList);
+	const numberOfComments = commentList.length
+	
 	return (
 		<section className='comment-section'>
 			<div className='comment-section__heading'>
-				<h5 className='comment-section__comment-counter'>3 Comments</h5>
+				<h5 className='comment-section__comment-counter'>{numberOfComments + " Comments"}</h5>
 			</div>
 			<NewCommentForm />
 
