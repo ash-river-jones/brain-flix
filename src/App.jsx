@@ -20,7 +20,7 @@ import './components/NextVideoSection/NextVideoSection.scss';
 import videoData from './data/video-details.json';
 
 function App() {
-	const [activeVideo, setActiveVideo] = useState(videoData[5]);
+	const [activeVideo, setActiveVideo] = useState(videoData[0]);
 
 	return (
 		<div className='App'>
@@ -28,7 +28,7 @@ function App() {
 			<VideoPlayer image={activeVideo.image} />
 			<VideoDetails activeVideo={activeVideo} />
 			<CommentSection commentData={activeVideo.comments} />
-			<NextVideoSection />
+			<NextVideoSection activeVideoID={activeVideo.id}/>
 		</div>
 	);
 }
