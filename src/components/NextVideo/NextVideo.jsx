@@ -1,21 +1,17 @@
 import './NextVideo.scss';
 
 function NextVideo(props) {
-	const { id, image, title, channel } = props;
+	const { id, image, title, channel, handelVideoClick } = props;
 
-	const nextVideoData = props.data
-	
-	const handelVideoClick = (id) =>{
+	const videoClick = (id) => {
+		handelVideoClick(id);
+	};
 
-		const foundVideo = nextVideoData.find(videoObject => videoObject.id === id)
-
-//	Fix the connection to setActiveVideo - look into how this is passed down and back up
-
-		setActiveVideo(foundVideo)
-	}
+	// const nextVideoData = props.data
+	// console.log(nextVideoData)
 
 	return (
-		<div onClick={() => handelVideoClick(id)} key={id} className='next-video__container'>
+		<div onClick={() => videoClick(id)} className='next-video__container'>
 			<img
 				className='next-video__thumbnail'
 				src={image}
