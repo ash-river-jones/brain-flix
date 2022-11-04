@@ -1,9 +1,11 @@
+// SCSS imports for partials
+
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/typography" as *;
 @use "./styles/partials/reset" as *;
 
-
+// SCSS imports for components  
 
 @use "./components/Comments/Comments.scss" as *;
 @use "./components/CommentSection/CommentSection.scss" as *;
@@ -22,3 +24,19 @@
 body {
     margin: 0;
 }
+
+.main-container{
+    @include desktop{
+        display: flex;
+        margin-inline: auto;
+        max-width: 70rem;
+        
+    }
+}
+
+.vid-details-comment-container{
+    @include desktop{
+        border-right: 1px solid $mercury;
+    }
+}
+

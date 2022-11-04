@@ -9,7 +9,7 @@
     margin-top: 1rem;
 
     &__container{
-        // width: 100vw;
+
     }
 
     &__icon-section {
@@ -30,10 +30,15 @@
     }
 
     &__data {
-        width: 14.75rem;
+        width: calc(100vw - 6.25rem);
+        min-width: 14.75rem;
         border-bottom: 1px solid $mercury;
         @include tablet{
-            width: 41.5rem;
+            width: calc(100vw - 6.25rem);
+        }
+        @include desktop{
+            width: calc(100vw - 38.5rem);
+            padding-right: 1.5rem;
         }
     }
 
@@ -56,7 +61,8 @@
     }
 
     &__body {
-        max-width: 14.75rem;
+        width: calc(100vw - 6.25rem);
+        min-width: 14.75rem;
         @include m-body;
         color: $darkblack;
         padding: 0.5rem 0 0.5rem 0;
@@ -64,7 +70,10 @@
         overflow-wrap: break-word;
         @include tablet {
             @include dt-body;
-            max-width: 40rem;
+        }
+        @include desktop{
+            width: calc(100vw - 40rem);
+
         }
     }
 }

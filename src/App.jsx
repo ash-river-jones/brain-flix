@@ -25,12 +25,16 @@ function App() {
 		<div className='App'>
 			<Header />
 			<VideoPlayer image={activeVideo.image} />
-			<VideoDetails activeVideo={activeVideo} />
-			<CommentSection commentData={activeVideo.comments} />
-			<NextVideoSection
-				activeVideo={activeVideo}
-				handelVideoClick={handelVideoClick}
-			/>
+			<div className='main-container'>
+				<div className='vid-details-comment-container'>
+					<VideoDetails activeVideo={activeVideo} />
+					<CommentSection commentData={activeVideo.comments} />
+				</div>
+				<NextVideoSection
+					activeVideo={activeVideo}
+					handelVideoClick={handelVideoClick}
+				/>
+			</div>
 		</div>
 	);
 }

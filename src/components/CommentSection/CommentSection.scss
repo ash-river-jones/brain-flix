@@ -10,11 +10,13 @@
     @include tablet {
         margin-inline: 1.5rem;
     }
+    @include desktop{
+        margin-right: 0;
+    }
 
     &__heading {
         margin: 1rem 0;
         @include tablet {
-            // margin: 2.25rem 1rem 1.5rem 1rem;
         }
     }
 

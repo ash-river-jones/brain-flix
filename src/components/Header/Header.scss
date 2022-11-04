@@ -19,11 +19,13 @@
 
     &__logo-section {
         margin: 1rem 1rem 0.5rem 1rem;
+        
     }
 
     &__logo {}
 
     &__search-upload-wrapper{
+        width: 100%;
         @include tablet{
             width: 60%;
             display: flex;
@@ -40,8 +42,6 @@
         @include tablet{
             width: 15rem;
             justify-content: flex-end;
-            // justify-self: flex-end;
-
         }
     }
 
@@ -50,7 +50,7 @@
         background-position: 0.5rem 50%;
         border: 1px solid $mercury;
         border-radius: 0.25rem;
-        height: 2.25rem;
+        height: 2.5rem;
         width: 100%;
         padding-left: 2rem;
     }
@@ -104,7 +104,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 2.25rem;
+        height: 2.5rem;
         color: $white;
         @include m-label-btn;
         border: 0;
