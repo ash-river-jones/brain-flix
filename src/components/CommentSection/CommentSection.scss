@@ -7,12 +7,21 @@
 .comment-section {
 
     margin: 1.5rem 1rem 1rem 1rem;
+    @include tablet {
+        margin-inline: 1.5rem;
+    }
 
     &__heading {
         margin: 1rem 0;
+        @include tablet {
+            // margin: 2.25rem 1rem 1.5rem 1rem;
+        }
     }
 
     &__comment-counter {
         @include m-section-header;
+        @include tablet{
+            @include dt-section-header;
+        }
     }
 }

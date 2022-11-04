@@ -12,21 +12,23 @@ function NewCommentForm() {
 					JOIN THE CONVERSATION
 				</label>{' '}
 				<br />
-				<textarea
-					className='new-comment__comment-input'
-					name='comment'
-					id='comment'
-					cols='30'
-					rows='10'
-					placeholder='Add a new comment'
-				></textarea>
-				<button
-					className='new-comment__btn'
-					type='submit'
-					id='commentBtn'
-				>
-					COMMENT
-				</button>
+				<div className='new-comment__wrap'>
+					<textarea
+						className='new-comment__comment-input'
+						name='comment'
+						id='comment'
+						// cols='30'
+						// rows='10'
+						placeholder='Add a new comment'
+					></textarea>
+					<button
+						className='new-comment__btn'
+						type='submit'
+						id='commentBtn'
+					>
+						COMMENT
+					</button>
+				</div>
 			</form>
 		</div>
 	);

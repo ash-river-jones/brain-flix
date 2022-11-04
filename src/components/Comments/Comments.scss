@@ -8,6 +8,10 @@
     justify-content: center;
     margin-top: 1rem;
 
+    &__container{
+        // width: 100vw;
+    }
+
     &__icon-section {
         border-bottom: 1px solid $mercury;
     }
@@ -28,17 +32,27 @@
     &__data {
         width: 14.75rem;
         border-bottom: 1px solid $mercury;
+        @include tablet{
+            width: 41.5rem;
+        }
     }
 
     &__name {
         @include m-body;
         font-weight: 700;
         color: $darkblack;
+        @include tablet {
+            @include dt-body;
+            font-weight: 700;
+        }
     }
 
     &__date {
         @include m-body;
         color: $silver;
+        @include tablet {
+            @include dt-body;
+        }
     }
 
     &__body {
@@ -48,5 +62,9 @@
         padding: 0.5rem 0 0.5rem 0;
         margin-bottom: 1rem;
         overflow-wrap: break-word;
+        @include tablet {
+            @include dt-body;
+            max-width: 40rem;
+        }
     }
 }

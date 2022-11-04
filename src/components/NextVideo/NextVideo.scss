@@ -7,6 +7,9 @@
     &__container {
         display: flex;
         margin: 0.75rem 0;
+        @include tablet {
+            margin: 1.25rem 0;
+        }
     }
 
     &__thumbnail {
@@ -25,14 +28,25 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 0.25rem;
+        @include tablet {
+            max-width: 25%;
+        }
     }
 
     &__title {
         @include m-body;
         font-weight: 700;
+        @include tablet{
+            @include dt-body;
+            font-weight: 700
+        }
     }
 
     &__author {
         @include m-body;
+        @include tablet{
+            @include dt-body;
+        }
+
     }
 }

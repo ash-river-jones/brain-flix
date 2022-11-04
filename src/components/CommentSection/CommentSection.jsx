@@ -16,7 +16,7 @@ function CommentSection(props) {
 			</div>
 			<NewCommentForm />
 
-			<div className='comment-container'>
+			<div className='comment__container'>
 				{commentList.map((comment) => (
 					<Comments
 						key={comment.id}
