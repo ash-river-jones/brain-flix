@@ -25,18 +25,17 @@ body {
     margin: 0;
 }
 
-.main-container{
-    @include desktop{
+.main-container {
+    @include desktop {
         display: flex;
         margin-inline: auto;
         max-width: 70rem;
-        
+
     }
 }
 
-.vid-details-comment-container{
-    @include desktop{
+.vid-details-comment-container {
+    @include desktop {
         border-right: 1px solid $mercury;
     }
 }
-

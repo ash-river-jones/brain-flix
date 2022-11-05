@@ -8,9 +8,7 @@
     justify-content: center;
     margin-top: 1rem;
 
-    &__container{
-
-    }
+    &__container {}
 
     &__icon-section {
         border-bottom: 1px solid $mercury;
@@ -33,10 +31,12 @@
         width: calc(100vw - 6.25rem);
         min-width: 14.75rem;
         border-bottom: 1px solid $mercury;
-        @include tablet{
+
+        @include tablet {
             width: calc(100vw - 6.25rem);
         }
-        @include desktop{
+
+        @include desktop {
             width: calc(100vw - 38.5rem);
             padding-right: 1.5rem;
         }
@@ -46,6 +46,7 @@
         @include m-body;
         font-weight: 700;
         color: $darkblack;
+
         @include tablet {
             @include dt-body;
             font-weight: 700;
@@ -55,6 +56,7 @@
     &__date {
         @include m-body;
         color: $silver;
+
         @include tablet {
             @include dt-body;
         }
@@ -68,12 +70,13 @@
         padding: 0.5rem 0 0.5rem 0;
         margin-bottom: 1rem;
         overflow-wrap: break-word;
+
         @include tablet {
             @include dt-body;
         }
-        @include desktop{
-            width: calc(100vw - 40rem);
 
+        @include desktop {
+            width: calc(100vw - 40rem);
         }
     }
 }

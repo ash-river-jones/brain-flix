@@ -11,18 +11,17 @@
         margin-inline: 1.5rem
     }
 
-    @include desktop{
+    @include desktop {
         margin-right: 0;
-        
     }
 
     &__wrapper {
         margin-inline: auto;
+
         @include desktop {
             max-width: 50rem;
             margin-right: auto;
         }
-
     }
 
     &__title {
@@ -49,6 +48,7 @@
             margin: 0;
             padding: 0;
         }
+
         @include desktop {
             padding-right: 1.5rem;
             width: 100%;
@@ -156,7 +156,8 @@
         @include tablet {
             padding-top: 1.5rem;
         }
-        @include desktop{
+
+        @include desktop {
             padding-right: 1.5rem;
         }
     }

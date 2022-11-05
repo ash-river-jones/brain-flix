@@ -8,19 +8,27 @@ function Header() {
 			<div className='header__logo-section'>
 				<img className='header__logo' src={logo} alt='logo' />
 			</div>
-			<div className="header__search-upload-wrapper">
+			<div className='header__search-upload-wrapper'>
 				<div className='header__search'>
 					<input
 						className='header__search-bar'
 						placeholder='Search'
 					></input>
-					<img src={avatar} alt='avatar' className='header__avatar header__avatar--mobile' />
+					<img
+						src={avatar}
+						alt='avatar'
+						className='header__avatar header__avatar--mobile'
+					/>
 				</div>
 				<div className='header__upload-bar'>
 					<button className='header__upload-btn' type='#'>
 						UPLOAD
 					</button>
-					<img src={avatar} alt='avatar' className='header__avatar header__avatar--tablet' />
+					<img
+						src={avatar}
+						alt='avatar'
+						className='header__avatar header__avatar--tablet'
+					/>
 				</div>
 			</div>
 		</section>

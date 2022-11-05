@@ -8,26 +8,28 @@
     flex-direction: column;
     align-items: center;
     margin-inline: 1rem;
-    @include tablet{
+
+    @include tablet {
         flex-direction: row;
         justify-content: space-between;
     }
-    @include desktop{
+
+    @include desktop {
         max-width: 70rem;
         margin-inline: auto;
     }
 
     &__logo-section {
         margin: 1rem 1rem 0.5rem 1rem;
-        
     }
 
     &__logo {}
 
-    &__search-upload-wrapper{
+    &__search-upload-wrapper {
         width: 100%;
-        @include tablet{
-            width: 60%;
+
+        @include tablet {
+            width: 100%;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -39,8 +41,8 @@
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
-        @include tablet{
-            width: 15rem;
+
+        @include tablet {
             justify-content: flex-end;
         }
     }
@@ -53,6 +55,11 @@
         height: 2.5rem;
         width: 100%;
         padding-left: 2rem;
+
+        @include tablet {
+            width: calc(100vw - 32.5rem);
+            max-width: 20rem;
+        }
     }
 
     &__avatar {
@@ -65,20 +72,24 @@
         border-radius: 50%;
         margin-left: 1rem;
         order: 2;
+
         @include tablet {
             width: 2.5rem;
             height: 2.5rem;
         }
 
-        &--mobile{
+        &--mobile {
             display: block;
-            @include tablet{
+
+            @include tablet {
                 display: none;
             }
         }
-        &--tablet{
+
+        &--tablet {
             display: none;
-            @include tablet{
+
+            @include tablet {
                 display: block;
             }
         }
@@ -86,9 +97,10 @@
 
     &__upload-bar {
         width: 100%;
-        @include tablet{
+
+        @include tablet {
             width: auto;
-            margin-left: 1.5rem;    
+            margin-left: 1.5rem;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -108,9 +120,9 @@
         color: $white;
         @include m-label-btn;
         border: 0;
-        @include tablet{
-            width: 10.75rem;
 
+        @include tablet {
+            width: 10.75rem;
             @include dt-label-btn;
         }
 
@@ -119,7 +131,7 @@
             margin: 0.5rem;
         }
 
-        &:hover{
+        &:hover {
             background-color: $darkblue;
         }
     }

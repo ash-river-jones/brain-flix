@@ -12,7 +12,6 @@
 
     &__avatar-section {
         border-bottom: 1px solid $mercury;
-
     }
 
     &__avatar {
@@ -32,6 +31,7 @@
 
     &__form {
         border-bottom: 1px solid $mercury;
+
         @include desktop {
             padding-right: 1.5rem;
         }
@@ -77,9 +77,9 @@
             height: 2.5rem;
             overflow: hidden;
         }
-        @include desktop{
-            width: calc(100vw - (51.25rem));
 
+        @include desktop {
+            width: calc(100vw - (51.25rem));
         }
 
         &::placeholder {
@@ -112,8 +112,8 @@
             @include dt-label-btn;
             font-weight: 400;
         }
-        
-        &:hover{
+
+        &:hover {
             background-color: $darkblue;
         }
     }
