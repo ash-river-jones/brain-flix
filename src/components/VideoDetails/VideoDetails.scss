@@ -16,11 +16,12 @@
     }
 
     &__wrapper {
-        margin-inline: auto;
+        margin-left: auto;
+        
 
         @include desktop {
-            max-width: 50rem;
-            margin-right: auto;
+            // max-width: 50rem;
+            // margin-right: auto;
         }
     }
 
