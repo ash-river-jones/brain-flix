@@ -14,13 +14,14 @@
     }
 
     &__thumbnail {
-        aspect-ratio: 16 / 9;
-        max-width: 6rem;
+        
+        max-width: 10rem;
         background-position: center;
         background-size: cover;
         object-fit: cover;
         border-radius: .25rem;
         margin-right: 0.75rem;
+        aspect-ratio: 16 / 9;
     }
 
     &__data {
