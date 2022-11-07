@@ -1,0 +1,88 @@
+// SCSS imports for partials
+
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/reset" as *;
+
+
+
+
+
+
+.upload{
+    border-top: .0625rem solid $mercury;
+    padding: 0 1rem;
+
+    &__page-title-wrapper{
+        margin: 1.5rem 0 1rem 0;
+    }
+
+    &__page-title{
+        @include m-page-header;
+        font-weight: 700;
+    }
+
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form{
+
+    }
+
+    &__video-section{
+
+    }
+
+    &__label{
+        @include m-body;
+        color: $silver;
+        font-weight: 400;
+        margin-bottom: .25rem;
+    }
+    
+    &__thumbnail{
+        max-width: 100%;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        border-radius: .25rem;
+    }
+
+    &__details{
+        margin-block: 1rem 1.5rem;
+    }
+
+    &__details-title{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__details-desc{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title{
+
+    }
+
+    &__desc{
+
+    }
+
+    &__btn-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__btn-cancel{
+
+    }
+
+    &__btn-publish{
+
+    }
+}

@@ -17,8 +17,6 @@ function NewCommentForm() {
 						className='new-comment__comment-input'
 						name='comment'
 						id='comment'
-						// cols='30'
-						// rows='10'
 						placeholder='Add a new comment'
 					></textarea>
 					<button

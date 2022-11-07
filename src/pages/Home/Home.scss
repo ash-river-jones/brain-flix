@@ -1,0 +1,41 @@
+// SCSS imports for partials
+
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/reset" as *;
+
+// SCSS imports for components  
+
+@use "../../components/Comments/Comments.scss" as *;
+@use "../../components/CommentSection/CommentSection.scss" as *;
+@use "../../components/NewCommentForm/NewCommentForm.scss" as *;
+@use "../../components/NextVideo/NextVideo.scss" as *;
+@use "../../components/NextVideoSection/NextVideoSection.scss" as *;
+@use "../../components/VideoDetails/VideoDetails.scss" as *;
+@use "../../components/VideoPlayer/VideoPlayer.scss" as *;
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.main-container {
+    @include desktop {
+        display: flex;
+        margin-inline: auto;
+        max-width: 70rem;
+        justify-content: center;
+
+    }
+}
+
+.vid-details-comment-container {
+    @include desktop {
+        border-right: 1px solid $mercury;
+    }
+}
