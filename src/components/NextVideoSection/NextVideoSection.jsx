@@ -13,7 +13,7 @@ function NextVideoSection(props) {
 			<div className='next-video__list'>
 				<div className='next-video__list-wrapper'>
 					{nextVideoData
-						.filter((video) => video.id !== activeVideoID)
+						?.filter((video) => video.id !== activeVideoID)
 						.map((video) => (
 							<NextVideo
 								key={video.id}

@@ -7,7 +7,7 @@ import '../Comments/Comments.scss';
 
 function CommentSection(props) {
 	const {commentData} = props;
-	const numberOfComments = commentData.length;
+	const numberOfComments = commentData?.length;
 
 	return (
 		<section className='comment-section'>
@@ -18,7 +18,7 @@ function CommentSection(props) {
 			</div>
 			<NewCommentForm />
 			<div className='comment__container'>
-				{commentData.map((comment) => (
+				{commentData?.map((comment) => (
 					<Comments
 						key={comment.id}
 						name={comment.name}

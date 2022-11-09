@@ -15,39 +15,50 @@ const apiKey = `b43d4e54-fde8-4fb4-8f9a-b9e7193d1f66`;
 
 export default function Home() {
 	const { id } = useParams();
-	const [nextVideoData, setNextVideoData] = useState(null)
+	const [nextVideoData, setNextVideoData] = useState(null);
 	const [activeVideo, setActiveVideo] = useState([]);
-	const api_url = `https://project-2-api.herokuapp.com/videos/`
-
-	useEffect(()=>{
-		axios
-			.get(`${api_url}?api_key=${apiKey}`)
-			.then((response)=>{
-				setNextVideoData(response.data)
-			})
-	},[])
+	// const api_url = `https://project-2-api.herokuapp.com/videos/`
 
 	useEffect(() => {
-		let activeVideoID = id || nextVideoData[0].id
+		axios
+			.get(
+				`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`
+			)
+			.then((response) => {
+				setNextVideoData(response.data);
+			});
+	}, []);
+
+	useEffect(() => {
+		let activeVideoID = id || nextVideoData[0].id;
+		console.log(activeVideoID);
 		if (activeVideoID) {
 			axios
-			.get(`${api_url}${id}?api_key=${apiKey}`)
-			.then((response) => {
-				setActiveVideo(response.data);
-			})
+				.get(
+					`https://project-2-api.herokuapp.com/videos/${activeVideoID}?api_key=${apiKey}`
+				)
+				.then((response) => {
+					setActiveVideo(response.data);
+				});
 		}
-	}, [id , nextVideoData]);
-	
+	}, [id, nextVideoData]);
 
 	return (
 		<>
-			{activeVideo && <VideoPlayer image={activeVideo.image} />}
+			{activeVideo && <VideoPlayer image={activeVideo?.image} />}
 			<div className='main-container'>
 				<div className='vid-details-comment-container'>
 					{activeVideo && <VideoDetails activeVideo={activeVideo} />}
-					{activeVideo.comments && <CommentSection commentData={activeVideo.comments} />}
+					{activeVideo?.comments && (
+						<CommentSection commentData={activeVideo?.comments} />
+					)}
 				</div>
-				{activeVideo && nextVideoData && <NextVideoSection activeVideo={activeVideo} nextVideoData={nextVideoData} />}
+				{activeVideo && nextVideoData && (
+					<NextVideoSection
+						activeVideo={activeVideo}
+						nextVideoData={nextVideoData}
+					/>
+				)}
 			</div>
 		</>
 	);
