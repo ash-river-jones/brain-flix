@@ -25,7 +25,7 @@ export default function Home() {
 			.then((response)=>{
 				setNextVideoData(response.data)
 			})
-	},[api_url])
+	},[])
 
 	useEffect(() => {
 		let activeVideoID = id || nextVideoData[0].id
@@ -36,7 +36,7 @@ export default function Home() {
 				setActiveVideo(response.data);
 			})
 		}
-	}, [api_url, id , nextVideoData]);
+	}, [id , nextVideoData]);
 	
 
 	return (
@@ -45,7 +45,7 @@ export default function Home() {
 			<div className='main-container'>
 				<div className='vid-details-comment-container'>
 					{activeVideo && <VideoDetails activeVideo={activeVideo} />}
-					{activeVideo && <CommentSection commentData={activeVideo} />}
+					{activeVideo.comments && <CommentSection commentData={activeVideo.comments} />}
 				</div>
 				{activeVideo && nextVideoData && <NextVideoSection activeVideo={activeVideo} nextVideoData={nextVideoData} />}
 			</div>
