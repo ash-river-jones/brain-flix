@@ -17,7 +17,6 @@ export default function Home() {
 	const { id } = useParams();
 	const [nextVideoData, setNextVideoData] = useState(null);
 	const [activeVideo, setActiveVideo] = useState([]);
-	// const api_url = `https://project-2-api.herokuapp.com/videos/`
 
 	useEffect(() => {
 		axios
@@ -31,7 +30,6 @@ export default function Home() {
 
 	useEffect(() => {
 		let activeVideoID = id || nextVideoData[0].id;
-		console.log(activeVideoID);
 		if (activeVideoID) {
 			axios
 				.get(
