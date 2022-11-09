@@ -1,35 +1,53 @@
+// node module imports
+
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+
+// import components
+
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import VideoDetails from '../../components/VideoDetails/VideoDetails';
 import CommentSection from '../../components/CommentSection/CommentSection';
 import NextVideoSection from '../../components/NextVideoSection/NextVideoSection';
-import videoData from '../../data/video-details.json';
 
-
-import { useState } from 'react';
+const apiKey = `b43d4e54-fde8-4fb4-8f9a-b9e7193d1f66`;
 
 export default function Home() {
+	const { id } = useParams();
+	const [nextVideoData, setNextVideoData] = useState(null)
+	const [activeVideo, setActiveVideo] = useState([]);
+	const api_url = `https://project-2-api.herokuapp.com/videos/`
 
-    const [activeVideo, setActiveVideo] = useState(videoData[0]);
+	useEffect(()=>{
+		axios
+			.get(`${api_url}?api_key=${apiKey}`)
+			.then((response)=>{
+				setNextVideoData(response.data)
+			})
+	},[api_url])
 
-	const handelVideoClick = (id) => {
-		const foundVideo = videoData.find(
-			(videoObject) => videoObject.id === id
-		);
-		setActiveVideo(foundVideo);
-	};
+	useEffect(() => {
+		let activeVideoID = id || nextVideoData[0].id
+		if (activeVideoID) {
+			axios
+			.get(`${api_url}${id}?api_key=${apiKey}`)
+			.then((response) => {
+				setActiveVideo(response.data);
+			})
+		}
+	}, [api_url, id , nextVideoData]);
+	
 
 	return (
 		<>
-			<VideoPlayer image={activeVideo.image} />
+			{activeVideo && <VideoPlayer image={activeVideo.image} />}
 			<div className='main-container'>
 				<div className='vid-details-comment-container'>
-					<VideoDetails activeVideo={activeVideo} />
-					<CommentSection commentData={activeVideo.comments} />
+					{activeVideo && <VideoDetails activeVideo={activeVideo} />}
+					{activeVideo && <CommentSection commentData={activeVideo} />}
 				</div>
-				<NextVideoSection
-					activeVideo={activeVideo}
-					handelVideoClick={handelVideoClick}
-				/>
+				{activeVideo && nextVideoData && <NextVideoSection activeVideo={activeVideo} nextVideoData={nextVideoData} />}
 			</div>
 		</>
 	);

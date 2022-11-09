@@ -1,13 +1,14 @@
 import logo from '../../assets/images/logo/logo.svg';
 import avatar from '../../assets/images/images/Mohan-muruge.jpg';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 
 function Header() {
 	return (
 		<div className='header__wrapper'>
 			<section className='header'>
 				<div className='header__logo-section'>
-					<img className='header__logo' src={logo} alt='logo' />
+					<Link to='/' ><img className='header__logo' src={logo} alt='logo' /></Link>
 				</div>
 				<div className='header__search-upload-wrapper'>
 					<div className='header__search'>
@@ -22,9 +23,11 @@ function Header() {
 						/>
 					</div>
 					<div className='header__upload-bar'>
-						<button className='header__upload-btn' type='#'>
-							UPLOAD
-						</button>
+						<Link to='/upload'>
+							<button className='header__upload-btn' type='#'>
+								UPLOAD
+							</button>
+						</Link>
 						<img
 							src={avatar}
 							alt='avatar'

@@ -1,13 +1,9 @@
-import './NextVideoSection.scss';
 import NextVideo from '../NextVideo/NextVideo';
-import '../NextVideo/NextVideo.scss';
 
-import nextVideoData from '../../data/videos.json';
+// import nextVideoData from '../../data/videos.json';
 
 function NextVideoSection(props) {
-	const videoClick = (id) => {
-		props.handelVideoClick(id);
-	};
+	const { nextVideoData } = props
 
 	const activeVideoID = props.activeVideo.id;
 
@@ -26,7 +22,6 @@ function NextVideoSection(props) {
 								channel={video.channel}
 								data={nextVideoData}
 								id={video.id}
-								handelVideoClick={videoClick}
 							/>
 						))}
 				</div>

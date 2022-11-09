@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import uploadThumbnail from '../../assets/images/images/Upload-video-preview.jpg';
 
 export default function Upload() {
@@ -50,12 +51,15 @@ export default function Upload() {
 					</div>
 					<div className='upload__btn-section'>
 						<div className='upload__btn-wrapper'>
-							<button
-								className='upload__btn-publish'
-								type='submit'
-							>
-								PUBLISH
-							</button>
+							<Link to='/'>
+								<button
+									onClick={()=>{alert("Video has been published to BrainFlix")}}
+									className='upload__btn-publish'
+									type='submit'
+								>
+									PUBLISH
+								</button>
+							</Link>
 							<button className='upload__btn-cancel' type='reset'>
 								CANCEL
 							</button>
