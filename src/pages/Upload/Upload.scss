@@ -173,6 +173,10 @@
         }
     }
 
+    &__btn-wrapper a {
+        width: 100%;
+    }
+
     &__btn-publish {
         border-radius: 0.25rem;
         background: url(../../assets/images/icons/upload.svg) $blue no-repeat scroll;

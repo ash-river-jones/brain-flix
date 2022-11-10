@@ -3,6 +3,8 @@
 
 @use "./pages/Upload/Upload.scss" as *;
 
+@use "./pages/PageNotFound/PageNotFound.scss" as *;
+
 * {
     box-sizing: border-box;
     text-decoration: none;

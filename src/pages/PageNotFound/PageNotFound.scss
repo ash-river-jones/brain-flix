@@ -1,0 +1,16 @@
+.page-not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img{
+        aspect-ratio: 8 / 6;
+        max-height: 85vh;
+    }
+}

@@ -12,18 +12,11 @@ export default function Upload() {
 					<div className='upload__form-wrapper'>
 						<div className='upload__video-section'>
 							<p className='upload__label'>VIDEO THUMBNAIL</p>
-							<img
-								className='upload__thumbnail'
-								src={uploadThumbnail}
-								alt='Upload Video Thumbnail'
-							/>
+							<img className='upload__thumbnail' src={uploadThumbnail} alt='Upload Video Thumbnail' />
 						</div>
 						<div className='upload__details-wrapper'>
 							<div className='upload__details'>
-								<label
-									className='upload__label'
-									htmlFor='title'
-								>
+								<label className='upload__label' htmlFor='title'>
 									TITLE YOUR VIDEO
 								</label>
 								<input
@@ -53,7 +46,9 @@ export default function Upload() {
 						<div className='upload__btn-wrapper'>
 							<Link to='/'>
 								<button
-									onClick={()=>{alert("Video has been published to BrainFlix")}}
+									onClick={() => {
+										alert('Video has been published to BrainFlix');
+									}}
 									className='upload__btn-publish'
 									type='submit'
 								>

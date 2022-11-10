@@ -26,12 +26,12 @@ export default function Home() {
 		)
 		.then((response) => {
 			setNextVideoData(response.data);
-			console.log(response.data)
+			// console.log(response.data)
 		});	
 	}
 
 	function getSingleVideo (videoID) {
-		console.log(nextVideoData)
+		// console.log(nextVideoData)
 		let activeVideoID = videoID || defaultVideoID
 		if (activeVideoID) {
 			axios
@@ -40,7 +40,7 @@ export default function Home() {
 				)
 				.then((response) => {
 					setActiveVideo(response.data);
-					console.log(response.data)
+					// console.log(response.data)
 				});
 		}
 	}
