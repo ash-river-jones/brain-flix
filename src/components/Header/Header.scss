@@ -8,7 +8,7 @@
     flex-direction: column;
     align-items: center;
     margin-inline: 1rem;
-    
+
 
 
     @include tablet {
@@ -21,7 +21,7 @@
         margin-inline: auto;
     }
 
-    &__wrapper{
+    &__wrapper {
         width: 100vw;
         border-bottom: .0625rem solid $mercury;
     }

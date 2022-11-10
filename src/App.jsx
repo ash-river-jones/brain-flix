@@ -8,17 +8,16 @@ import './App.scss';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
-import Upload from './pages/Upload/Upload'
+import Upload from './pages/Upload/Upload';
 
 function App() {
-
 	return (
 		<div className='App'>
 			<BrowserRouter>
 				<Header />
 				<Routes>
 					<Route path='/' element={<Home />} />
-					<Route path='/upload' element={<Upload />} />			
+					<Route path='/upload' element={<Upload />} />
 					<Route path='/video/:id' element={<Home />} />
 					<Route path='*' element={<PageNotFound />} />
 				</Routes>

@@ -19,11 +19,7 @@ function NewCommentForm() {
 						id='comment'
 						placeholder='Add a new comment'
 					></textarea>
-					<button
-						className='new-comment__btn'
-						type='submit'
-						id='commentBtn'
-					>
+					<button className='new-comment__btn' type='submit' id='commentBtn'>
 						COMMENT
 					</button>
 				</div>

@@ -1,6 +1,6 @@
 import NextVideo from '../NextVideo/NextVideo';
 
-function NextVideoSection({ nextVideoData, activeVideo}) {
+function NextVideoSection({ nextVideoData, activeVideo }) {
 	const activeVideoID = activeVideo.id;
 
 	return (

@@ -8,19 +8,14 @@ function Header() {
 		<div className='header__wrapper'>
 			<section className='header'>
 				<div className='header__logo-section'>
-					<Link to='/' ><img className='header__logo' src={logo} alt='logo' /></Link>
+					<Link to='/'>
+						<img className='header__logo' src={logo} alt='logo' />
+					</Link>
 				</div>
 				<div className='header__search-upload-wrapper'>
 					<div className='header__search'>
-						<input
-							className='header__search-bar'
-							placeholder='Search'
-						></input>
-						<img
-							src={avatar}
-							alt='avatar'
-							className='header__avatar header__avatar--mobile'
-						/>
+						<input className='header__search-bar' placeholder='Search'></input>
+						<img src={avatar} alt='avatar' className='header__avatar header__avatar--mobile' />
 					</div>
 					<div className='header__upload-bar'>
 						<Link to='/upload'>
@@ -28,11 +23,7 @@ function Header() {
 								UPLOAD
 							</button>
 						</Link>
-						<img
-							src={avatar}
-							alt='avatar'
-							className='header__avatar header__avatar--tablet'
-						/>
+						<img src={avatar} alt='avatar' className='header__avatar header__avatar--tablet' />
 					</div>
 				</div>
 			</section>

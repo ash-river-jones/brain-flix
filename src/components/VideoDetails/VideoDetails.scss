@@ -17,12 +17,6 @@
 
     &__wrapper {
         margin-left: auto;
-        
-
-        @include desktop {
-            // max-width: 50rem;
-            // margin-right: auto;
-        }
     }
 
     &__title {
