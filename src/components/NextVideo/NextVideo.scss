@@ -17,7 +17,7 @@
 
     &__thumbnail {
         
-        max-width: 10rem;
+        max-width: 11rem;
         background-position: center;
         background-size: cover;
         object-fit: cover;
@@ -31,6 +31,7 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 0.25rem;
+        width: 11rem;
 
         @include tablet {
             max-width: 25%;

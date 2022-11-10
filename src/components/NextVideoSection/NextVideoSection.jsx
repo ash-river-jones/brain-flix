@@ -1,7 +1,5 @@
 import NextVideo from '../NextVideo/NextVideo';
 
-// import nextVideoData from '../../data/videos.json';
-
 function NextVideoSection(props) {
 	const { nextVideoData } = props
 

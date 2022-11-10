@@ -17,6 +17,7 @@ export default function Home() {
 	const { id } = useParams();
 	const [nextVideoData, setNextVideoData] = useState(null);
 	const [activeVideo, setActiveVideo] = useState([]);
+	const defaultVideoID = `84e96018-4022-434e-80bf-000ce4cd12b8`
 
 	function getVideoListData () {
 		axios
@@ -31,7 +32,7 @@ export default function Home() {
 
 	function getSingleVideo (videoID) {
 		console.log(nextVideoData)
-		let activeVideoID = videoID || nextVideoData[0].id
+		let activeVideoID = videoID || defaultVideoID
 		if (activeVideoID) {
 			axios
 				.get(
