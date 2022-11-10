@@ -5,8 +5,7 @@ import './CommentSection.scss';
 import Comments from '../Comments/Comments';
 import '../Comments/Comments.scss';
 
-function CommentSection(props) {
-	const {commentData} = props;
+function CommentSection({commentData}) {
 	const numberOfComments = commentData?.length;
 
 	return (

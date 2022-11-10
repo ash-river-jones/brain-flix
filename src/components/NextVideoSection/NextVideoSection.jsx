@@ -1,9 +1,7 @@
 import NextVideo from '../NextVideo/NextVideo';
 
-function NextVideoSection(props) {
-	const { nextVideoData } = props
-
-	const activeVideoID = props.activeVideo.id;
+function NextVideoSection({ nextVideoData, activeVideo}) {
+	const activeVideoID = activeVideo.id;
 
 	return (
 		<section className='next-video__section'>

@@ -10,6 +10,7 @@ import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import VideoDetails from '../../components/VideoDetails/VideoDetails';
 import CommentSection from '../../components/CommentSection/CommentSection';
 import NextVideoSection from '../../components/NextVideoSection/NextVideoSection';
+import PageNotFound from '../PageNotFound/PageNotFound'
 
 const apiKey = `b43d4e54-fde8-4fb4-8f9a-b9e7193d1f66`;
 
@@ -55,7 +56,7 @@ export default function Home() {
 
 	return (
 		<>
-			{activeVideo ? (
+			{activeVideo ? 
 				<>
 					<VideoPlayer image={activeVideo.image} />
 					<div className='main-container'>
@@ -71,9 +72,7 @@ export default function Home() {
 						/>
 					</div>
 				</>
-			) : (
-				'loading data ...'
-			)}
+			: <PageNotFound /> }
 		</>
 	);
 }

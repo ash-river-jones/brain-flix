@@ -1,4 +1,4 @@
-function VideoPlayer(props) {
+function VideoPlayer({image}) {
 	return (
 		<section className='video'>
 			<div className='video__wrapper'>
@@ -6,7 +6,7 @@ function VideoPlayer(props) {
 					className='video__player'
 					src=''
 					controls
-					poster={props.image}
+					poster={image}
 				></video>
 			</div>
 		</section>

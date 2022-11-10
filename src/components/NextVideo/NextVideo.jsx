@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import './NextVideo.scss';
 
-function NextVideo(props) {
-	const { id, image, title, channel } = props;
+function NextVideo({ id, image, title, channel }) {
 
 	return (
 		<Link to={`/video/${id}`}>
