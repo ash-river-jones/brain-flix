@@ -23,19 +23,16 @@ export default function Home() {
 	function getVideoListData() {
 		axios.get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`).then((response) => {
 			setNextVideoData(response.data);
-			// console.log(response.data)
 		});
 	}
 
 	function getSingleVideo(videoID) {
-		// console.log(nextVideoData)
 		let activeVideoID = videoID || defaultVideoID;
 		if (activeVideoID) {
 			axios
 				.get(`https://project-2-api.herokuapp.com/videos/${activeVideoID}?api_key=${apiKey}`)
 				.then((response) => {
 					setActiveVideo(response.data);
-					// console.log(response.data)
 				});
 		}
 	}
