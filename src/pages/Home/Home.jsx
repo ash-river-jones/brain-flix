@@ -62,7 +62,7 @@ export default function Home() {
 					</div>
 				</>
 			) : (
-				<PageNotFound />
+				<div><h1>Page Loading</h1></div>
 			)}
 		</>
 	);
