@@ -10,31 +10,26 @@ import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import VideoDetails from '../../components/VideoDetails/VideoDetails';
 import CommentSection from '../../components/CommentSection/CommentSection';
 import NextVideoSection from '../../components/NextVideoSection/NextVideoSection';
-import PageNotFound from '../PageNotFound/PageNotFound';
 
-const apiKey = `b43d4e54-fde8-4fb4-8f9a-b9e7193d1f66`;
+const api_url = 'http://localhost:2000';
 
 export default function Home() {
 	const { id } = useParams();
 	const [nextVideoData, setNextVideoData] = useState(null);
-	const [activeVideo, setActiveVideo] = useState([]);
-	const defaultVideoID = `84e96018-4022-434e-80bf-000ce4cd12b8`;
+	const [activeVideo, setActiveVideo] = useState(null);
+	const [defaultVideoId, setDefaultVideoId] = useState(null);
 
 	function getVideoListData() {
-		axios.get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`).then((response) => {
+			axios.get(`${api_url}/videos`).then((response) => {
 			setNextVideoData(response.data);
+			setDefaultVideoId(response.data[0].id);
 		});
 	}
 
 	function getSingleVideo(videoID) {
-		let activeVideoID = videoID || defaultVideoID;
-		if (activeVideoID) {
-			axios
-				.get(`https://project-2-api.herokuapp.com/videos/${activeVideoID}?api_key=${apiKey}`)
-				.then((response) => {
-					setActiveVideo(response.data);
-				});
-		}
+			axios.get(`${api_url}/videos/${videoID}`).then((response) => {
+				setActiveVideo(response.data);
+			});
 	}
 
 	useEffect(() => {
@@ -42,25 +37,28 @@ export default function Home() {
 	}, []);
 
 	useEffect(() => {
-		getSingleVideo(id);
-	}, [id]);
+		if(id){
+			getSingleVideo(id);
+		} else if (defaultVideoId) {
+			getSingleVideo(defaultVideoId);
+		}
+		
+	}, [id, defaultVideoId]);
 
 	return (
 		<>
-			{activeVideo ? (
-				<>
-					<VideoPlayer image={activeVideo.image} />
-					<div className='main-container'>
-						<div className='vid-details-comment-container'>
-							<VideoDetails activeVideo={activeVideo} />
-							<CommentSection commentData={activeVideo.comments} />
-						</div>
-						<NextVideoSection activeVideo={activeVideo} nextVideoData={nextVideoData} />
+			{activeVideo && nextVideoData &&
+			<>
+				<VideoPlayer image={activeVideo.image} />
+				<div className='main-container'>
+					<div className='vid-details-comment-container'>
+						<VideoDetails activeVideo={activeVideo} />
+						<CommentSection commentData={activeVideo.comments} />
 					</div>
-				</>
-			) : (
-				<div><h1>Page Loading</h1></div>
-			)}
+					<NextVideoSection activeVideo={activeVideo} nextVideoData={nextVideoData} />
+				</div>
+			</>
+			}
 		</>
 	);
 }

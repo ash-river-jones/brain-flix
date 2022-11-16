@@ -2,6 +2,12 @@ import { Link } from 'react-router-dom';
 import uploadThumbnail from '../../assets/images/images/Upload-video-preview.jpg';
 
 export default function Upload() {
+
+	// function handelFormSubmit(event){
+	// 	console.log(event.target)
+	// 	event.preventDefault()
+	// }
+
 	return (
 		<section className='upload'>
 			<div className='upload__page-title-wrapper'>
@@ -46,6 +52,7 @@ export default function Upload() {
 						<div className='upload__btn-wrapper'>
 							<Link to='/'>
 								<button
+									// onSubmit={()=>{handelFormSubmit()}}
 									onClick={() => {
 										alert('Video has been published to BrainFlix');
 									}}
