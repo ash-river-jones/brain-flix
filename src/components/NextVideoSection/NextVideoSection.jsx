@@ -1,6 +1,6 @@
 import NextVideo from '../NextVideo/NextVideo';
 
-function NextVideoSection({ nextVideoData, activeVideo }) {
+function NextVideoSection({ nextVideoData, activeVideo, api_url}) {
 	const activeVideoID = activeVideo.id;
 
 	return (
@@ -18,6 +18,7 @@ function NextVideoSection({ nextVideoData, activeVideo }) {
 								channel={video.channel}
 								data={nextVideoData}
 								id={video.id}
+								api_url={api_url}
 							/>
 						))}
 				</div>

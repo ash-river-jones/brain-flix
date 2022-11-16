@@ -11,7 +11,8 @@ import VideoDetails from '../../components/VideoDetails/VideoDetails';
 import CommentSection from '../../components/CommentSection/CommentSection';
 import NextVideoSection from '../../components/NextVideoSection/NextVideoSection';
 
-const api_url = 'http://localhost:2000';
+const api_url = process.env.REACT_APP_BACKEND_SERVER_API_URL || '';
+console.log(api_url)
 
 export default function Home() {
 	const { id } = useParams();
@@ -49,13 +50,13 @@ export default function Home() {
 		<>
 			{activeVideo && nextVideoData &&
 			<>
-				<VideoPlayer image={activeVideo.image} />
+				<VideoPlayer api_url={api_url} image={activeVideo.image} />
 				<div className='main-container'>
 					<div className='vid-details-comment-container'>
 						<VideoDetails activeVideo={activeVideo} />
 						<CommentSection commentData={activeVideo.comments} />
 					</div>
-					<NextVideoSection activeVideo={activeVideo} nextVideoData={nextVideoData} />
+					<NextVideoSection api_url={api_url} activeVideo={activeVideo} nextVideoData={nextVideoData} />
 				</div>
 			</>
 			}

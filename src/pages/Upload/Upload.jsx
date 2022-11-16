@@ -20,8 +20,8 @@ export default function Upload() {
 			event.target.reset()
 			axios
 				.post(`${api_url}/videos`,newVideo)
-				.then((response)=>{
-					console.log(response)
+				.then(()=>{
+					navigate('/')
 				})
 		}
 
@@ -70,9 +70,6 @@ export default function Upload() {
 					<div className='upload__btn-section'>
 						<div className='upload__btn-wrapper'>
 								<button
-									// onClick={() => {
-									// 	alert('Video has been published to BrainFlix');
-									// }}
 									className='upload__btn-publish'
 									type='submit'
 								>
