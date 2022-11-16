@@ -1,5 +1,4 @@
 function VideoPlayer({ image }) {
-	console.log(image)
 	return (
 		<section className='video'>
 			<div className='video__wrapper'>

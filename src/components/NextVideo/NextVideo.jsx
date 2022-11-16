@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import './NextVideo.scss';
 
 function NextVideo({ id, image, title, channel }) {
-	console.log(image)
 	return (
 		<Link to={`/video/${id}`}>
 			<div className='next-video__container'>
