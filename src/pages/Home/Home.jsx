@@ -12,7 +12,7 @@ import CommentSection from '../../components/CommentSection/CommentSection';
 import NextVideoSection from '../../components/NextVideoSection/NextVideoSection';
 
 const api_url = process.env.REACT_APP_BACKEND_SERVER_API_URL || '';
-console.log(api_url)
+console.log(api_url);
 
 export default function Home() {
 	const { id } = useParams();
@@ -21,16 +21,16 @@ export default function Home() {
 	const [defaultVideoId, setDefaultVideoId] = useState(null);
 
 	function getVideoListData() {
-			axios.get(`${api_url}/videos`).then((response) => {
+		axios.get(`${api_url}/videos`).then((response) => {
 			setNextVideoData(response.data);
 			setDefaultVideoId(response.data[0].id);
 		});
 	}
 
 	function getSingleVideo(videoID) {
-			axios.get(`${api_url}/videos/${videoID}`).then((response) => {
-				setActiveVideo(response.data);
-			});
+		axios.get(`${api_url}/videos/${videoID}`).then((response) => {
+			setActiveVideo(response.data);
+		});
 	}
 
 	useEffect(() => {
@@ -38,28 +38,31 @@ export default function Home() {
 	}, []);
 
 	useEffect(() => {
-		if(id){
+		if (id) {
 			getSingleVideo(id);
 		} else if (defaultVideoId) {
 			getSingleVideo(defaultVideoId);
 		}
-		
-	}, [id, defaultVideoId]);
+	}, [id, defaultVideoId, activeVideo]);
 
 	return (
 		<>
-			{activeVideo && nextVideoData &&
-			<>
-				<VideoPlayer api_url={api_url} image={activeVideo.image} />
-				<div className='main-container'>
-					<div className='vid-details-comment-container'>
-						<VideoDetails activeVideo={activeVideo} />
-						<CommentSection commentData={activeVideo.comments} api_url={api_url} />
+			{activeVideo && nextVideoData && (
+				<>
+					<VideoPlayer api_url={api_url} image={activeVideo.image} />
+					<div className='main-container'>
+						<div className='vid-details-comment-container'>
+							<VideoDetails activeVideo={activeVideo} />
+							<CommentSection
+								commentData={activeVideo.comments}
+								api_url={api_url}
+								activeVideoId={activeVideo.id}
+							/>
+						</div>
+						<NextVideoSection api_url={api_url} activeVideo={activeVideo} nextVideoData={nextVideoData} />
 					</div>
-					<NextVideoSection api_url={api_url} activeVideo={activeVideo} nextVideoData={nextVideoData} />
-				</div>
-			</>
-			}
+				</>
+			)}
 		</>
 	);
 }

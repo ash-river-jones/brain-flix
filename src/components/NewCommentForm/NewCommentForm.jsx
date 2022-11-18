@@ -2,25 +2,19 @@ import avatar from '../../assets/images/images/Mohan-muruge.jpg';
 import './NewCommentForm.scss';
 import axios from 'axios';
 
-function NewCommentForm({api_url}) {
-
-	const handelCommentSubmit= (event) => {
-		event.preventDefault()
+function NewCommentForm({ api_url, activeVideoId }) {
+	const handelCommentSubmit = (event) => {
+		event.preventDefault();
 		const newComment = {
-			comment: event.target.comment.value
-		}
-		console.log(event.target.comment.value)
+			comment: event.target.comment.value,
+		};
+		console.log(event.target.comment.value);
 
-		if(newComment.comment){
-			event.target.reset()
-			axios
-				.post(`${api_url}/videos`,newComment)
-				.then(()=>{
-					
-				})
+		if (newComment.comment) {
+			axios.post(`${api_url}/videos/${activeVideoId}/comments`, newComment).then(() => {});
+			event.target.reset();
 		}
-
-	}
+	};
 
 	return (
 		<div className='new-comment'>

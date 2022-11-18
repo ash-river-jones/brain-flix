@@ -5,17 +5,15 @@ import './CommentSection.scss';
 import Comments from '../Comments/Comments';
 import '../Comments/Comments.scss';
 
-function CommentSection({commentData, api_url}) {
+function CommentSection({ commentData, api_url, activeVideoId }) {
 	const numberOfComments = commentData?.length;
 
 	return (
 		<section className='comment-section'>
 			<div className='comment-section__heading'>
-				<h5 className='comment-section__comment-counter'>
-					{numberOfComments} Comments
-				</h5>
+				<h5 className='comment-section__comment-counter'>{numberOfComments} Comments</h5>
 			</div>
-			<NewCommentForm api_url={api_url}/>
+			<NewCommentForm api_url={api_url} activeVideoId={activeVideoId} />
 			<div className='comment__container'>
 				{commentData?.map((comment) => (
 					<Comments
