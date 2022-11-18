@@ -5,7 +5,7 @@ import './CommentSection.scss';
 import Comments from '../Comments/Comments';
 import '../Comments/Comments.scss';
 
-function CommentSection({commentData}) {
+function CommentSection({commentData, api_url}) {
 	const numberOfComments = commentData?.length;
 
 	return (
@@ -15,7 +15,7 @@ function CommentSection({commentData}) {
 					{numberOfComments} Comments
 				</h5>
 			</div>
-			<NewCommentForm />
+			<NewCommentForm api_url={api_url}/>
 			<div className='comment__container'>
 				{commentData?.map((comment) => (
 					<Comments

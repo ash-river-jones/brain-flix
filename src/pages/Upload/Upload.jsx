@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
 import uploadThumbnail from '../../assets/images/images/Upload-video-preview.jpg';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const api_url = 'http://localhost:2000';
+const api_url =  process.env.REACT_APP_BACKEND_SERVER_API_URL || '';
 
 
 export default function Upload() {

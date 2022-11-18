@@ -54,7 +54,7 @@ export default function Home() {
 				<div className='main-container'>
 					<div className='vid-details-comment-container'>
 						<VideoDetails activeVideo={activeVideo} />
-						<CommentSection commentData={activeVideo.comments} />
+						<CommentSection commentData={activeVideo.comments} api_url={api_url} />
 					</div>
 					<NextVideoSection api_url={api_url} activeVideo={activeVideo} nextVideoData={nextVideoData} />
 				</div>

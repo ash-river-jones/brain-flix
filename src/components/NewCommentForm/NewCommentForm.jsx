@@ -1,13 +1,33 @@
 import avatar from '../../assets/images/images/Mohan-muruge.jpg';
 import './NewCommentForm.scss';
+import axios from 'axios';
 
-function NewCommentForm() {
+function NewCommentForm({api_url}) {
+
+	const handelCommentSubmit= (event) => {
+		event.preventDefault()
+		const newComment = {
+			comment: event.target.comment.value
+		}
+		console.log(event.target.comment.value)
+
+		if(newComment.comment){
+			event.target.reset()
+			axios
+				.post(`${api_url}/videos`,newComment)
+				.then(()=>{
+					
+				})
+		}
+
+	}
+
 	return (
 		<div className='new-comment'>
 			<div className='new-comment__avatar-section'>
 				<img className='new-comment__avatar' src={avatar} alt='' />
 			</div>
-			<form className='new-comment__form' id='comment-form'>
+			<form className='new-comment__form' id='comment-form' onSubmit={handelCommentSubmit}>
 				<label className='new-comment__subheader' htmlFor='comment'>
 					JOIN THE CONVERSATION
 				</label>{' '}
