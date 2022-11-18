@@ -4,7 +4,9 @@ import './VideoDetails.scss';
 import relativeTime from '../../utils/utils';
 
 function VideoDetails(props) {
-	const { title, channel, timestamp, views, likes, description } = props.activeVideo;
+	const { title, channel, timestamp, views, likes, description, id } = props.activeVideo;
+
+
 
 	return (
 		<section className='vid-details'>

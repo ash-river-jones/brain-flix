@@ -53,6 +53,14 @@
         }
     }
 
+    &__right{
+        display: flex;
+    }
+
+    &__delete-icon{
+        margin-right: 1rem;
+    }
+
     &__date {
         @include m-body;
         color: $silver;

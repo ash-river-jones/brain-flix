@@ -21,6 +21,9 @@ function CommentSection({ commentData, api_url, activeVideoId }) {
 						name={comment.name}
 						timestamp={comment.timestamp}
 						comment={comment.comment}
+						api_url={api_url}
+						activeVideoId={activeVideoId}
+						commentId={comment.id}
 					/>
 				))}
 			</div>
