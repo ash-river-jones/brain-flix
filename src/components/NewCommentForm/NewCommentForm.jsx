@@ -11,7 +11,10 @@ function NewCommentForm({ api_url, activeVideoId }) {
 		console.log(event.target.comment.value);
 
 		if (newComment.comment) {
-			axios.post(`${api_url}/videos/${activeVideoId}/comments`, newComment).then(() => {});
+			axios
+				.post(`${api_url}/videos/${activeVideoId}/comments`, newComment)
+				.then(() => {})
+				.catch((error)=>{console.log(error)});
 			event.target.reset();
 		}
 	};

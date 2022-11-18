@@ -21,16 +21,20 @@ export default function Home() {
 	const [defaultVideoId, setDefaultVideoId] = useState(null);
 
 	function getVideoListData() {
-		axios.get(`${api_url}/videos`).then((response) => {
-			setNextVideoData(response.data);
-			setDefaultVideoId(response.data[0].id);
-		});
+		axios
+			.get(`${api_url}/videos`)
+			.then((response) => {
+				setNextVideoData(response.data);
+				setDefaultVideoId(response.data[0].id);
+			}).catch((error)=>{console.log(error)});
 	}
 
 	function getSingleVideo(videoID) {
-		axios.get(`${api_url}/videos/${videoID}`).then((response) => {
-			setActiveVideo(response.data);
-		});
+		axios
+			.get(`${api_url}/videos/${videoID}`)
+			.then((response) => {
+				setActiveVideo(response.data);
+			}).catch((error)=>{console.log(error)});
 	}
 
 	useEffect(() => {
@@ -52,7 +56,7 @@ export default function Home() {
 					<VideoPlayer api_url={api_url} image={activeVideo.image} />
 					<div className='main-container'>
 						<div className='vid-details-comment-container'>
-							<VideoDetails activeVideo={activeVideo} />
+							<VideoDetails activeVideo={activeVideo} api_url={api_url}/>
 							<CommentSection
 								commentData={activeVideo.comments}
 								api_url={api_url}

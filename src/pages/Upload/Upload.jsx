@@ -22,6 +22,7 @@ export default function Upload() {
 				.then(()=>{
 					navigate('/')
 				})
+				.catch((error)=>{console.log(error)});
 		}
 
 	}

@@ -6,11 +6,10 @@ import axios from 'axios';
 function Comments({ name, timestamp, comment, id, api_url, activeVideoId, commentId}) {
 
 	const handelCommentDelete = (event) => {
-		console.log(event.target)
 			axios
 				.delete(`${api_url}/videos/${activeVideoId}/comments/${commentId}`)
-				.then(() => {});
-			
+				.then(() => {})
+				.catch((error)=>{console.log(error)});
 	};
 
 	return (
