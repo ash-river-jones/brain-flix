@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
 
 //Component Imports
-import Header from './components/Header/Header';
+import PageHeader from './components/PageHeader/PageHeader';
 import Home from './pages/Home/Home';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Upload from './pages/Upload/Upload';
@@ -14,7 +14,7 @@ function App() {
 	return (
 		<div className='App'>
 			<BrowserRouter>
-				<Header />
+				<PageHeader />
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/upload' element={<Upload />} />

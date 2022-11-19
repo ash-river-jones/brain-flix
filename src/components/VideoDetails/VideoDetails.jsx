@@ -9,7 +9,6 @@ function VideoDetails(props) {
 	const api_url = props.api_url
 
 	const handelVideoLike = () => {
-		console.log(api_url)
 			axios
 				.put(`${api_url}/videos/${id}/likes`)
 				.then(() => {})

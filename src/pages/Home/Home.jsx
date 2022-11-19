@@ -12,7 +12,6 @@ import CommentSection from '../../components/CommentSection/CommentSection';
 import NextVideoSection from '../../components/NextVideoSection/NextVideoSection';
 
 const api_url = process.env.REACT_APP_BACKEND_SERVER_API_URL || '';
-console.log(api_url);
 
 export default function Home() {
 	const { id } = useParams();

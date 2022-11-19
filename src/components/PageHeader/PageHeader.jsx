@@ -1,6 +1,6 @@
 import logo from '../../assets/images/logo/logo.svg';
 import avatar from '../../assets/images/images/Mohan-muruge.jpg';
-import './Header.scss';
+import './PageHeader.scss';
 import { Link } from 'react-router-dom';
 
 function Header() {
